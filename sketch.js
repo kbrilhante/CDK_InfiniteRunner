@@ -1,5 +1,5 @@
 let bgImg, jumpFall;
-let bg, ground, char;
+let bg, ground, char, obstacles;
 let gameStart, gameOver;
 
 function preload() {
@@ -25,18 +25,24 @@ function setup() {
     ground.bounciness = 0;
 
     char = new Character(100, 0);
+
+    obstacles = new Obstacles();
 }
 
 function draw() {
     background("hotpink");
     if (gameStart && !gameOver) {
+        // game started
         bg.moveBackground();
         char.handleJumps();
+        obstacles.handleObs();
     }
     if (!gameStart && !gameOver && kb.presses(" ")) {
+        // start the game
         gameStart = true;
         bg.startBackground();
         char.run();
+        obstacles.addObs();
     }
     char.handleCollisions();
 }

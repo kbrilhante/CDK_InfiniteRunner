@@ -36,7 +36,6 @@ class BG {
             const first = l[0];
             if (first.x <= -width) {
                 const lastX = l[l.length - 1].x;
-                console.log(lastX)
                 const newSpr = new l.Sprite();
                 newSpr.x = lastX + width;
                 newSpr.vel.x = first.vel.x;

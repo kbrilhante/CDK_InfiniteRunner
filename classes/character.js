@@ -9,25 +9,25 @@ class Character {
         this.spr.layer = ground.layer + 1;
         this.spr.addAni('faint', "./assets/character/faint.png", {
             frames: 3,
-            frameSize: [239, 206],
+            size: [239, 206],
             frameDelay: 8
         });
         this.spr.addAni('idle', "./assets/character/idle.png", {
             frames: 2,
-            frameSize: [152, 205],
+            size: [152, 205],
             frameDelay: 10
         });
         this.spr.addAni('run', "./assets/character/run.png", {
             frames: 4,
-            frameSize: [154, 205]
+            size: [154, 205]
         });
         this.spr.addAni('jumpUp', "./assets/character/jumpUp.png", {
             frames: 1,
-            frameSize: [152, 224]
+            size: [152, 224]
         });
         this.spr.addAni('jumpFall', jumpFall, {
             frames: 1,
-            frameSize: [152, 224]
+            size: [152, 224]
         });
         this.spr.changeAni("jumpFall");
         this.spr.scale = 0.6;
@@ -35,7 +35,6 @@ class Character {
         this.spr.bounciness = 0;
 
         this.jumpHeight = -8;
-        console.log(this.spr.layer)
     }
     handleCollisions() {
         if (this.spr.collides(ground) && !gameOver) {
