@@ -7,21 +7,21 @@ class Character {
         this.spr.w = 80;
         this.spr.h = 200;
         this.spr.layer = ground.layer + 1;
-        this.spr.addAni('faint', "/assets/character/faint.png", {
+        this.spr.addAni('faint', "./assets/character/faint.png", {
             frames: 3,
             frameSize: [239, 206],
             frameDelay: 8
         });
-        this.spr.addAni('idle', "/assets/character/idle.png", {
+        this.spr.addAni('idle', "./assets/character/idle.png", {
             frames: 2,
             frameSize: [152, 205],
             frameDelay: 10
         });
-        this.spr.addAni('run', "/assets/character/run.png", {
+        this.spr.addAni('run', "./assets/character/run.png", {
             frames: 4,
             frameSize: [154, 205]
         });
-        this.spr.addAni('jumpUp', "/assets/character/jumpUp.png", {
+        this.spr.addAni('jumpUp', "./assets/character/jumpUp.png", {
             frames: 1,
             frameSize: [152, 224]
         });
