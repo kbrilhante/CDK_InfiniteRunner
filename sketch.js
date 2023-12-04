@@ -1,6 +1,7 @@
 let bgImg, jumpFall;
 let bg, ground, char, obstacles;
 let gameStart, gameOver;
+let score, hiScore;
 
 function preload() {
     loadBG();
@@ -9,10 +10,11 @@ function preload() {
 
 function setup() {
     new Canvas(1024, 512);
-    world.gravity.y = 10;
+    world.gravity.y = 14;
     
     gameStart = false;
     gameOver = false;
+    score = 0;
     
     bg = new BG();
     
