@@ -4,7 +4,7 @@ let gameStart, gameOver;
 
 function preload() {
     loadBG();
-    jumpFall = loadImage("/assets/character/jumpFall.png");
+    jumpFall = loadImage("./assets/character/jumpFall.png");
 }
 
 function setup() {
