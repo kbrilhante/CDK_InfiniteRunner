@@ -26,7 +26,7 @@ function setup() {
     ground.y = height - ground.h / 2;
     ground.bounciness = 0;
 
-    char = new Character(100, 0);
+    char = new Character(160, 0);
 
     obstacles = new Obstacles();
 }
@@ -55,4 +55,10 @@ function loadBG() {
         const img = loadImage("./assets/background/layer" + i + ".png");
         bgImg.push(img);
     }
+}
+
+function endGame(obs) {
+    gameOver = true;
+    obstacles.stopObs(obs);
+    bg.stopBackground();
 }

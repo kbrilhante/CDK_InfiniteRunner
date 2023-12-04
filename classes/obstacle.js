@@ -44,7 +44,8 @@ class Obstacles {
             score++;
         }
     }
-    removeObs() {
-
+    stopObs(obs) {
+        obs.remove();
+        this.group.vel.x = 0;
     }
 }

@@ -10,7 +10,7 @@ class Character {
         this.spr.addAni('faint', "./assets/character/faint.png", {
             frames: 3,
             size: [239, 206],
-            frameDelay: 8
+            // frameDelay: 8
         });
         this.spr.addAni('idle', "./assets/character/idle.png", {
             frames: 2,
@@ -33,6 +33,7 @@ class Character {
         this.spr.scale = 0.6;
 
         this.spr.bounciness = 0;
+        this.spr.rotationLock = true;
 
         this.jumpHeight = -10;
     }
@@ -43,6 +44,9 @@ class Character {
             } else { 
                 this.run();
             }
+        }
+        if (gameStart && !gameOver) {
+            this.spr.collides(obstacles.group, this.obsCollide)
         }
     }
     run() {
@@ -56,5 +60,10 @@ class Character {
         if (this.spr.vel.y > 0) {
             this.spr.changeAni("jumpFall");
         }
+    }
+    obsCollide(char, obs) {
+        char.changeAni("faint");
+        char.ani.noLoop();
+        endGame(obs);
     }
 }
