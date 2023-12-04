@@ -34,7 +34,7 @@ class Character {
 
         this.spr.bounciness = 0;
 
-        this.jumpHeight = -8;
+        this.jumpHeight = -10;
     }
     handleCollisions() {
         if (this.spr.collides(ground) && !gameOver) {

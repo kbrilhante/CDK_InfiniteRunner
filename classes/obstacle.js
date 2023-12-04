@@ -35,8 +35,13 @@ class Obstacles {
     }
     handleObs() {
         const lastObs = this.group[this.group.length - 1];
+        const firstObs = this.group[0];
         if (lastObs.x <= width) {
             this.addObs();
+        }
+        if (firstObs.x < -firstObs.w / 2) {
+            firstObs.remove();
+            score++;
         }
     }
     removeObs() {
