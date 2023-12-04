@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "jump fall/frame.png",
+	"frame": {"x":0,"y":0,"w":152,"h":224},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":224},
+	"sourceSize": {"w":152,"h":224}
+},
+{
+	"filename": "jump up/frame.png",
+	"frame": {"x":152,"y":0,"w":152,"h":224},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":224},
+	"sourceSize": {"w":152,"h":224}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "jump.png",
+	"format": "RGBA8888",
+	"size": {"w":304,"h":224},
+	"scale": "0.5",
+	"smartupdate": "$TexturePacker:SmartUpdate:ce57aac249d279c755324edb1a06f6eb:850bd38c476e8b8f5becb170bbe8ad85:56c9fa24931e40777fe0ddacfe328adf$"
+}
+}
