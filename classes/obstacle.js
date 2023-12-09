@@ -11,8 +11,6 @@ class Obstacles {
         this.group.friction = 0;
         this.group.collider = 'k';
         // this.group.debug = true;
-        this.speed = speed;
-
     }
     addObs(n) {
         let ani = n;
@@ -31,7 +29,7 @@ class Obstacles {
         }
         spr.y = ground.y - (ground.h + spr.h) / 2;
         spr.x = width + random(300, 800);
-        spr.vel.x = this.speed;
+        spr.vel.x = speed;
     }
     handleObs() {
         const lastObs = this.group[this.group.length - 1];
@@ -54,11 +52,10 @@ class Obstacles {
         this.group.vel.x = 0;
     }
     checkForSpeed() {
-        // if (score % 10 === 0) {
-        if (score % 4 === 0) {
-            speed--;
+        if (score % 10 === 0) {
+            speed -= 0.5;
             bg.startBackground();
-            this.speed = speed;
+            this.group.vel.x = speed;
         }
     }
 }

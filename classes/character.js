@@ -15,7 +15,7 @@ class Character {
         this.spr.addAni('idle', "./assets/character/idle.png", {
             frames: 2,
             size: [152, 205],
-            frameDelay: 10
+            frameDelay: 14
         });
         this.spr.addAni('run', "./assets/character/run.png", {
             frames: 4,
