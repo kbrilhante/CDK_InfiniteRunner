@@ -1,6 +1,7 @@
 class BG {
     constructor() {
         this.group = new Group();
+        // this.group.debug = true;
         this.group.collider = "n";
         this.layers = [];
         for (let i = 0; i < bgImg.length; i++) {

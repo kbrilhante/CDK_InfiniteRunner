@@ -10,7 +10,7 @@ class Obstacles {
         this.group.bounciness = 0;
         this.group.friction = 0;
         this.group.collider = 'k';
-        this.group.debug = true;
+        // this.group.debug = true;
         this.speed = -4;
 
     }

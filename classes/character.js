@@ -1,7 +1,7 @@
 class Character {
     constructor(x, y) {
         this.spr = new Sprite();
-        this.spr.debug = true
+        // this.spr.debug = true;
         this.spr.x = x;
         this.spr.y = y;
         this.spr.w = 80;
