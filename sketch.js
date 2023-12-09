@@ -77,6 +77,7 @@ function setGameInfo() {
     grInfo.w = width / 2;
     grInfo.h = 60;
     grInfo.y = grInfo.h / 2;
+    grInfo.textSize = 34;
     for (let i = 0; i < 2; i++) {
         const spr = new grInfo.Sprite();
         spr.x = i * grInfo.w + grInfo.w / 2;
@@ -85,4 +86,5 @@ function setGameInfo() {
 
 function drawGameInfo() {
     grInfo[0].text = "Score: " + score;
+    grInfo[1].text = "Hi-Score: " + hiScore;
 }
