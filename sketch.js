@@ -2,6 +2,8 @@ let bgImg, jumpFall;
 let bg, ground, char, obstacles;
 let gameStart, gameOver;
 let score, hiScore;
+let grInfo;
+let speed;
 
 function preload() {
     loadBG();
@@ -10,7 +12,7 @@ function preload() {
 
 function setup() {
     new Canvas(1024, 512);
-    world.gravity.y = 14;
+    world.gravity.y = 18;
     
     gameStart = false;
     gameOver = false;
@@ -29,6 +31,8 @@ function setup() {
     char = new Character(160, 0);
 
     obstacles = new Obstacles();
+
+    setGameInfo();
 }
 
 function draw() {
@@ -47,6 +51,8 @@ function draw() {
         obstacles.addObs();
     }
     char.handleCollisions();
+
+    drawGameInfo();
 }
 
 function loadBG() {
@@ -61,4 +67,22 @@ function endGame(obs) {
     gameOver = true;
     obstacles.stopObs(obs);
     bg.stopBackground();
+}
+
+function setGameInfo() {
+    grInfo = new Group();
+    grInfo.collider = 'n';
+    grInfo.strokeWeight = 0;
+    grInfo.color = "#ffffffaa";
+    grInfo.w = width / 2;
+    grInfo.h = 60;
+    grInfo.y = grInfo.h / 2;
+    for (let i = 0; i < 2; i++) {
+        const spr = new grInfo.Sprite();
+        spr.x = i * grInfo.w + grInfo.w / 2;
+    }
+}
+
+function drawGameInfo() {
+    grInfo[0].text = "Score: " + score;
 }
