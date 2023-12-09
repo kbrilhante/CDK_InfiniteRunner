@@ -75,9 +75,9 @@ function setGameInfo() {
     grInfo.strokeWeight = 0;
     grInfo.color = "#ffffffaa";
     grInfo.w = width / 2;
-    grInfo.h = 60;
+    grInfo.h = 50;
     grInfo.y = grInfo.h / 2;
-    grInfo.textSize = 34;
+    grInfo.textSize = 30;
     for (let i = 0; i < 2; i++) {
         const spr = new grInfo.Sprite();
         spr.x = i * grInfo.w + grInfo.w / 2;
