@@ -23,12 +23,14 @@ class BG {
         }
         gr.ani = bgImg[index];
         gr.scale = 0.5;
-        return gr
+        return gr;
     }
     startBackground() {
-        for (let i = 0; i < this.group.length; i++) {
-            const spr = this.group[i];
-            spr.vel.x = -spr.layer;
+        let rate = speed / (this.layers.length - 1);
+        console.log(rate);
+        for (let i = 1; i < this.layers.length; i++) {
+            const layerGroup = this.layers[i];
+            layerGroup.vel.x = rate * i;
         }
     }
     moveBackground() {

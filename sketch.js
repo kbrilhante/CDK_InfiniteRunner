@@ -17,6 +17,8 @@ function setup() {
     gameStart = false;
     gameOver = false;
     score = 0;
+    hiScore = getHiScore();
+    speed = -4;
     
     bg = new BG();
     
@@ -52,7 +54,7 @@ function draw() {
     }
     char.handleCollisions();
 
-    drawGameInfo();
+    drawGameInfo(); 
 }
 
 function loadBG() {
@@ -87,4 +89,12 @@ function setGameInfo() {
 function drawGameInfo() {
     grInfo[0].text = "Score: " + score;
     grInfo[1].text = "Hi-Score: " + hiScore;
+}
+
+function getHiScore () {
+    let hs = localStorage.getItem("hiScore");
+    if (hs) {
+        return hs;
+    }
+    return 0;
 }

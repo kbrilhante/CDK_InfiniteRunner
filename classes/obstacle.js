@@ -11,7 +11,7 @@ class Obstacles {
         this.group.friction = 0;
         this.group.collider = 'k';
         // this.group.debug = true;
-        this.speed = -4;
+        this.speed = speed;
 
     }
     addObs(n) {
@@ -42,10 +42,23 @@ class Obstacles {
         if (firstObs.x < -firstObs.w / 2) {
             firstObs.remove();
             score++;
+            if (score > hiScore) {
+                hiScore = score;
+                localStorage.setItem("hiScore", hiScore);
+            }
+            this.checkForSpeed();
         }
     }
     stopObs(obs) {
         obs.remove();
         this.group.vel.x = 0;
+    }
+    checkForSpeed() {
+        // if (score % 10 === 0) {
+        if (score % 4 === 0) {
+            speed--;
+            bg.startBackground();
+            this.speed = speed;
+        }
     }
 }
