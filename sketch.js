@@ -1,4 +1,4 @@
-let bgImg, jumpFall;
+let bgImg, faint, idle, run, jumpUp, jumpFall;
 let bg, ground, char, obstacles;
 let gameStart, gameOver;
 let score, hiScore;
@@ -7,6 +7,10 @@ let speed;
 
 function preload() {
     loadBG();
+    faint = loadImage("./assets/character/faint.png");
+    idle = loadImage("./assets/character/idle.png");
+    run = loadImage("./assets/character/run.png");
+    jumpUp = loadImage("./assets/character/jumpUp.png");
     jumpFall = loadImage("./assets/character/jumpFall.png");
 }
 
@@ -35,6 +39,8 @@ function setup() {
     obstacles = new Obstacles();
 
     setGameInfo();
+
+    setGameOverInfo();
 }
 
 function draw() {
@@ -52,9 +58,12 @@ function draw() {
         char.run();
         obstacles.addObs();
     }
+    if (gameStart && gameOver && kb.presses("enter")) {
+        reset();
+    }
     char.handleCollisions();
 
-    drawGameInfo(); 
+    drawGameInfo();
 }
 
 function loadBG() {
@@ -69,6 +78,7 @@ function endGame(obs) {
     gameOver = true;
     obstacles.stopObs(obs);
     bg.stopBackground();
+    grGameOver.visible = true;
 }
 
 function setGameInfo() {
@@ -86,6 +96,7 @@ function setGameInfo() {
     }
 }
 
+
 function drawGameInfo() {
     grInfo[0].text = "Score: " + score;
     grInfo[1].text = "Hi-Score: " + hiScore;
@@ -97,4 +108,36 @@ function getHiScore () {
         return hs;
     }
     return 0;
+}
+
+function setGameOverInfo() {
+    grGameOver = new Group();
+    grGameOver.collider = "n";
+    grGameOver.strokeWeight = 0;
+    grGameOver.color = "#ffffffaa";
+    grGameOver.w = 500;
+    grGameOver.h = 100;
+    let go = new grGameOver.Sprite();
+    go.y = height * 0.4;
+    go.textSize = 70;
+    go.text = "GAME OVER";
+    let msg = new grGameOver.Sprite();
+    msg.h = 40;
+    msg.y = go.y + go.h / 2 + msg.h / 2;
+    msg.textSize = 26;
+    msg.text = "Press ENTER to play again";
+    grGameOver.visible = false;
+}
+
+function reset() {
+    bg.removeAll();
+    char.remove();
+    obstacles.removeAll();
+    bg = new BG();
+    char = new Character(160, 0);
+
+    gameStart = false;
+    gameOver = false;
+    grGameOver.visible = false;
+    score = 0;
 }
