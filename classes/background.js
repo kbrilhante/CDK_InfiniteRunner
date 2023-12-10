@@ -48,4 +48,7 @@ class BG {
     stopBackground() {
         this.group.vel.x = 0;
     }
+    removeAll() {
+        this.group.removeAll();
+    }
 }

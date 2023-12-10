@@ -58,4 +58,7 @@ class Obstacles {
             this.group.vel.x = speed;
         }
     }
+    removeAll() {
+        this.group.removeAll();
+    }
 }

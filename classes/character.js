@@ -7,21 +7,21 @@ class Character {
         this.spr.w = 80;
         this.spr.h = 200;
         this.spr.layer = ground.layer + 1;
-        this.spr.addAni('faint', "./assets/character/faint.png", {
+        this.spr.addAni('faint', faint, {
             frames: 3,
             size: [239, 206],
             // frameDelay: 8
         });
-        this.spr.addAni('idle', "./assets/character/idle.png", {
+        this.spr.addAni('idle', idle, {
             frames: 2,
             size: [152, 205],
             frameDelay: 14
         });
-        this.spr.addAni('run', "./assets/character/run.png", {
+        this.spr.addAni('run', run, {
             frames: 4,
             size: [154, 205]
         });
-        this.spr.addAni('jumpUp', "./assets/character/jumpUp.png", {
+        this.spr.addAni('jumpUp', jumpUp, {
             frames: 1,
             size: [152, 224]
         });
@@ -65,5 +65,8 @@ class Character {
         char.changeAni("faint");
         char.ani.noLoop();
         endGame(obs);
+    }
+    remove() {
+        this.spr.remove();
     }
 }
