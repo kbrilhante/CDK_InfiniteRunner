@@ -130,14 +130,15 @@ function setGameOverInfo() {
 }
 
 function reset() {
+    gameStart = false;
+    gameOver = false;
+    grGameOver.visible = false;
+    score = 0;
+    speed = -4;
+
     bg.removeAll();
     char.remove();
     obstacles.removeAll();
     bg = new BG();
     char = new Character(160, 0);
-
-    gameStart = false;
-    gameOver = false;
-    grGameOver.visible = false;
-    score = 0;
 }
