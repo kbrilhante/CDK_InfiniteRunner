@@ -2,7 +2,7 @@ let bgImg, jumpFall;
 let bg, ground, char, obstacles;
 let gameStart, gameOver;
 let score, hiScore;
-let grInfo;
+let grInfo, grGameOver;
 let speed;
 
 function preload() {
@@ -12,7 +12,7 @@ function preload() {
 
 function setup() {
     new Canvas(1024, 512);
-    world.gravity.y = 18;
+    world.gravity.y = 20;
     
     gameStart = false;
     gameOver = false;
