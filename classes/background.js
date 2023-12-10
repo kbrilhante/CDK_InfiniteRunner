@@ -27,7 +27,6 @@ class BG {
     }
     startBackground() {
         let rate = speed / (this.layers.length - 1);
-        console.log(rate);
         for (let i = 1; i < this.layers.length; i++) {
             const layerGroup = this.layers[i];
             layerGroup.vel.x = rate * i;
